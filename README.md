@@ -39,7 +39,7 @@ https://api.github.com/users/{username}/repos
 ## 📸 Preview
 ![Home Page](src/assets/devpreview1.png)
 ![Search Result](src/assets/devpreview2.png)
-![Explore]
+![Explore](src/assets/exploreprev.png)
 
 
 ---
@@ -49,7 +49,9 @@ https://api.github.com/users/{username}/repos
 Built by Adeyanju Ayotomide
 
 GitHub: https://github.com/teecodes-dev
+
 LinkedIn: https://ng.linkedin.com/in/adeyanju-ayotomide
+
 Email: ayotomideadeyanju@gmail.com
 
 ---

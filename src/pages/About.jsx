@@ -27,7 +27,7 @@ const About = () => {
               : "bg-white border-gray-200"
           }`}
         >
-          <h2 className="text-xl font-semibold mb-3">🚀 What This App Does</h2>
+          <h2 className="text-xl font-semibold mb-3"> What This App Does</h2>
 
           <p className="text-sm md:text-base opacity-80 leading-relaxed">
             This application allows users to search for GitHub profiles, explore

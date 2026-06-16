@@ -8,8 +8,11 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,16 +23,21 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    console.log("Contact Form Submitted:", formData);
+    const mailtoLink = `mailto:ayotomideadeyanju@gmail.com?subject=${encodeURIComponent(
+      formData.subject,
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}
+Email: ${formData.email}
 
-    alert("Message sent successfully (demo mode)");
+Message:
+${formData.message}`,
+    )}`;
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    window.location.href = mailtoLink;
+
+    setLoading(false);
   };
 
   return (
@@ -38,7 +46,6 @@ const Contact = () => {
       ${darkMode ? "bg-[#0f172a] text-white" : "bg-gray-50 text-gray-900"}`}
     >
       <div className="max-w-3xl mx-auto">
-        {/* HEADER */}
         <h1 className="text-3xl md:text-4xl font-bold text-center">
           Contact Us
         </h1>
@@ -47,10 +54,9 @@ const Contact = () => {
           Have feedback or suggestions? Send a message.
         </p>
 
-        {/* FORM */}
         <form
           onSubmit={handleSubmit}
-          className={`mt-10 p-6 md:p-8 rounded-xl border shadow-sm space-y-5 transition
+          className={`mt-10 p-6 md:p-8 rounded-xl border shadow-sm space-y-5
           ${
             darkMode
               ? "bg-[#1e293b] border-gray-800"
@@ -58,73 +64,56 @@ const Contact = () => {
           }`}
         >
           {/* Name */}
-          <div>
-            <label className="text-sm font-medium">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your name"
-              className={`w-full mt-1 p-3 rounded-lg border outline-none text-sm
-              ${
-                darkMode
-                  ? "bg-[#0f172a] border-gray-700 text-white"
-                  : "bg-gray-50 border-gray-300"
-              }`}
-              required
-            />
-          </div>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your name"
+            className="w-full p-3 rounded-lg border bg-transparent outline-none"
+            required
+          />
 
           {/* Email */}
-          <div>
-            <label className="text-sm font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="you@example.com"
-              className={`w-full mt-1 p-3 rounded-lg border outline-none text-sm
-              ${
-                darkMode
-                  ? "bg-[#0f172a] border-gray-700 text-white"
-                  : "bg-gray-50 border-gray-300"
-              }`}
-              required
-            />
-          </div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your email"
+            className="w-full p-3 rounded-lg border bg-transparent outline-none"
+            required
+          />
+
+          {/* Subject */}
+          <input
+            type="text"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            placeholder="Subject"
+            className="w-full p-3 rounded-lg border bg-transparent outline-none"
+            required
+          />
 
           {/* Message */}
-          <div>
-            <label className="text-sm font-medium">Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Write your message..."
-              rows="5"
-              className={`w-full mt-1 p-3 rounded-lg border outline-none text-sm resize-none
-              ${
-                darkMode
-                  ? "bg-[#0f172a] border-gray-700 text-white"
-                  : "bg-gray-50 border-gray-300"
-              }`}
-              required
-            />
-          </div>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Write your message..."
+            rows="5"
+            className="w-full p-3 rounded-lg border bg-transparent outline-none resize-none"
+            required
+          />
 
-          {/* Submit Button */}
+          {/* Button */}
           <button
             type="submit"
-            className={`w-full py-3 rounded-lg font-medium transition
-            ${
-              darkMode
-                ? "bg-blue-600 hover:bg-blue-500 text-white"
-                : "bg-blue-500 hover:bg-blue-400 text-white"
-            }`}
+            disabled={loading}
+            className="w-full py-3 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-500 transition"
           >
-            Send Message
+            {loading ? "Opening Email..." : "Send Message"}
           </button>
         </form>
       </div>
