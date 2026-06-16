@@ -1,15 +1,23 @@
 import { NavLink } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
-import { useContext } from "react";
+import { FaGithub, FaBars, FaTimes } from "react-icons/fa";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { darkMode } = useContext(ThemeContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    isActive
+      ? "text-violet-600 font-semibold"
+      : "hover:text-violet-600 transition";
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header
-      className={`sticky top-0 z-50 backdrop-blur-md border-b transition-colors duration-300
+      className={`relative sticky top-0 z-[9999] backdrop-blur-md border-b transition-colors duration-300
       ${
         darkMode
           ? "bg-slate-950/70 border-slate-800 text-white"
@@ -19,56 +27,23 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2">
-          <span className="text-3xl"></span>
-
           <h1 className="text-2xl font-bold">
             Dev<span className="text-violet-600">Finder</span>
           </h1>
         </NavLink>
 
-        {/* Navigation Links */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "text-violet-600 font-semibold"
-                : "hover:text-violet-600 transition"
-            }
-          >
+          <NavLink to="/" className={linkClass}>
             Home
           </NavLink>
-
-          <NavLink
-            to="/explore"
-            className={({ isActive }) =>
-              isActive
-                ? "text-violet-600 font-semibold"
-                : "hover:text-violet-600 transition"
-            }
-          >
+          <NavLink to="/explore" className={linkClass}>
             Explore
           </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive
-                ? "text-violet-600 font-semibold"
-                : "hover:text-violet-600 transition"
-            }
-          >
+          <NavLink to="/about" className={linkClass}>
             About
           </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "text-violet-600 font-semibold"
-                : "hover:text-violet-600 transition"
-            }
-          >
+          <NavLink to="/contact" className={linkClass}>
             Contact
           </NavLink>
         </div>
@@ -86,8 +61,44 @@ const Navbar = () => {
           >
             <FaGithub size={20} />
           </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </nav>
+
+      {/* MOBILE MENU (FIXED) */}
+      {menuOpen && (
+        <div
+          className={`md:hidden fixed top-[72px] left-0 w-full px-6 py-4 flex flex-col gap-4 border-t z-[9999]
+          ${
+            darkMode
+              ? "bg-slate-950 border-slate-800"
+              : "bg-white border-slate-200"
+          }`}
+        >
+          <NavLink to="/" onClick={closeMenu} className={linkClass}>
+            Home
+          </NavLink>
+
+          <NavLink to="/explore" onClick={closeMenu} className={linkClass}>
+            Explore
+          </NavLink>
+
+          <NavLink to="/about" onClick={closeMenu} className={linkClass}>
+            About
+          </NavLink>
+
+          <NavLink to="/contact" onClick={closeMenu} className={linkClass}>
+            Contact
+          </NavLink>
+        </div>
+      )}
     </header>
   );
 };

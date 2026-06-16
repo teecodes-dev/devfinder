@@ -7,10 +7,12 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-slate-950 transition-colors duration-300">
+      <ScrollToTop />
       <Navbar />
 
       <main className="flex-1">
