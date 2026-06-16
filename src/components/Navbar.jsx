@@ -25,14 +25,14 @@ const Navbar = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        
         <NavLink to="/" className="flex items-center gap-2">
           <h1 className="text-2xl font-bold">
             Dev<span className="text-violet-600">Finder</span>
           </h1>
         </NavLink>
 
-        {/* Desktop Links */}
+        
         <div className="hidden md:flex items-center gap-8">
           <NavLink to="/" className={linkClass}>
             Home
@@ -48,7 +48,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Right Section */}
+       
         <div className="flex items-center gap-4">
           <ThemeToggle />
 
@@ -62,7 +62,7 @@ const Navbar = () => {
             <FaGithub size={20} />
           </a>
 
-          {/* Mobile Menu Button */}
+          
           <button
             className="md:hidden text-xl"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -72,7 +72,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* MOBILE MENU (FIXED) */}
+      
       {menuOpen && (
         <div
           className={`md:hidden fixed top-[72px] left-0 w-full px-6 py-4 flex flex-col gap-4 border-t z-[9999]

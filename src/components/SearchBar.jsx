@@ -26,7 +26,7 @@ const SearchBar = ({ onSearch }) => {
         darkMode ? "bg-[#1e293b] border-gray-700" : "bg-white border-gray-200"
       }`}
     >
-      {/* Input */}
+      
       <input
         type="text"
         value={query}
@@ -40,7 +40,7 @@ const SearchBar = ({ onSearch }) => {
         }`}
       />
 
-      {/* Button */}
+      
       <button
         type="submit"
         className={`px-4 py-2 rounded-lg text-sm font-medium transition

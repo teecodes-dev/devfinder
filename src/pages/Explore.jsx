@@ -63,7 +63,7 @@ const Explore = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        {/* HEADER */}
+        
         <h1 className="text-3xl md:text-4xl font-bold">
           Explore Developers
         </h1>
@@ -72,9 +72,9 @@ const Explore = () => {
           Discover GitHub developers and trending profiles
         </p>
 
-        {/* CONTROLS */}
+       
         <div className="mt-6 grid md:grid-cols-3 gap-3">
-          {/* SEARCH */}
+         
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -86,7 +86,7 @@ const Explore = () => {
             }`}
           />
 
-          {/* LOCATION FILTER */}
+          
           <input
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -98,7 +98,7 @@ const Explore = () => {
             }`}
           />
 
-          {/* BUTTONS */}
+          
           <div className="flex gap-2">
             <button
               onClick={() => fetchUsers(true)}
@@ -116,7 +116,7 @@ const Explore = () => {
           </div>
         </div>
 
-        {/* VIEW SWITCH */}
+        
         <div className="mt-6 flex gap-3">
           <button
             onClick={() => setView("users")}
@@ -137,7 +137,7 @@ const Explore = () => {
           </button>
         </div>
 
-        {/* USERS GRID */}
+        
         {view === "users" && (
           <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {loading &&
@@ -183,14 +183,14 @@ const Explore = () => {
           </div>
         )}
 
-        {/* TRENDING REPOS (OPTIONAL SIMPLE VERSION) */}
+        
         {view === "repos" && (
           <div className="mt-10 text-center opacity-70">
-            Trending repositories feature coming next 🚀
+            Trending repositories feature coming next 
           </div>
         )}
 
-        {/* LOAD MORE */}
+       
         {view === "users" && users.length > 0 && (
           <div className="mt-10 text-center">
             <button

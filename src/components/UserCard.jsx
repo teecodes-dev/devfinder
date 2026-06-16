@@ -12,14 +12,14 @@ const UserCard = ({ user }) => {
       ${darkMode ? "bg-[#1e293b] text-white" : "bg-white text-gray-900"}`}
     >
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Avatar */}
+        
         <img
           src={user.avatar_url}
           alt={user.login}
           className="w-32 h-32 rounded-full border"
         />
 
-        {/* Info */}
+        
         <div>
           <h2 className="text-2xl font-bold">{user.name || user.login}</h2>
 
@@ -31,7 +31,7 @@ const UserCard = ({ user }) => {
 
           <p className="mt-3 opacity-80">{user.bio || "No bio available"}</p>
 
-          {/* Stats */}
+          
           <div className="flex gap-6 mt-4 text-sm">
             <p className="flex items-center gap-1">
               <FaUsers /> Followers: {user.followers}
@@ -42,7 +42,7 @@ const UserCard = ({ user }) => {
             <p>Repos: {user.public_repos}</p>
           </div>
 
-          {/* Link */}
+          
           <a
             href={user.html_url}
             target="_blank"

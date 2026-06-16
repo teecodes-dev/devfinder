@@ -63,7 +63,7 @@ ${formData.message}`,
               : "bg-white border-gray-200"
           }`}
         >
-          {/* Name */}
+          
           <input
             type="text"
             name="name"
@@ -74,7 +74,7 @@ ${formData.message}`,
             required
           />
 
-          {/* Email */}
+          
           <input
             type="email"
             name="email"
@@ -85,7 +85,7 @@ ${formData.message}`,
             required
           />
 
-          {/* Subject */}
+          
           <input
             type="text"
             name="subject"
@@ -96,7 +96,7 @@ ${formData.message}`,
             required
           />
 
-          {/* Message */}
+          
           <textarea
             name="message"
             value={formData.message}
@@ -107,7 +107,7 @@ ${formData.message}`,
             required
           />
 
-          {/* Button */}
+          
           <button
             type="submit"
             disabled={loading}

@@ -47,10 +47,10 @@ const Home = () => {
           : "bg-gradient-to-b from-gray-50 to-white text-gray-900"
       }`}
     >
-      {/* HERO SECTION (Search lives here) */}
+      
       <Hero onSearch={handleSearch} />
 
-      {/* USER PROFILE SECTION */}
+      
       <UserProfile user={user} repos={repos} loading={loading} />
     </div>
   );

@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // safe default load
+  
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });

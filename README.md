@@ -4,6 +4,14 @@ A modern GitHub user and repository explorer built with **React**, **Tailwind CS
 
 ---
 
+## 🌐 Project Links
+
+🚀 Live Demo: https://devfinder-io.vercel.app/  
+
+📦 GitHub Repository: https://github.com/teecodes-dev/devfinder
+
+---
+
 ##  Features
 
 - 🔎 Search GitHub users in real time

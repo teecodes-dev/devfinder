@@ -16,17 +16,17 @@ const RepoCard = ({ repo }) => {
           : "bg-white border-gray-200 text-gray-900"
       }`}
     >
-      {/* TOP CONTENT */}
+      
       <div className="flex-1">
-        {/* Repo Name */}
+        
         <h2 className="text-lg font-semibold">{repo.name}</h2>
 
-        {/* Description */}
+       
         <p className="text-sm mt-2 opacity-80 line-clamp-3">
           {repo.description || "No description provided."}
         </p>
 
-        {/* Stats Row */}
+       
         <div className="flex flex-wrap gap-4 mt-4 text-sm opacity-80">
           <span>⭐ {repo.stargazers_count}</span>
           <span>🍴 {repo.forks_count}</span>
@@ -34,7 +34,7 @@ const RepoCard = ({ repo }) => {
         </div>
       </div>
 
-      {/* FIXED BOTTOM ACTION */}
+      
       <div className="mt-5">
         <a
           href={repo.html_url}

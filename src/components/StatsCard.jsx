@@ -14,13 +14,13 @@ const StatsCard = ({ label, value, icon }) => {
           : "bg-white border-gray-200 text-gray-900"
       }`}
     >
-      {/* Top row: icon + label */}
+     
       <div className="flex items-center gap-2 text-sm opacity-80">
         {icon && <span className="text-lg">{icon}</span>}
         <span>{label}</span>
       </div>
 
-      {/* Value */}
+     
       <h2 className="text-2xl font-bold">{value}</h2>
     </div>
   );

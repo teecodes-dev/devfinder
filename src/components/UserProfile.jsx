@@ -21,7 +21,7 @@ const UserProfile = ({ user, repos = [], loading = false }) => {
 
   return (
     <div className="mt-10 max-w-6xl mx-auto px-4">
-      {/* USER HEADER */}
+      
       <div
         className={`p-6 rounded-xl border shadow-sm flex flex-col md:flex-row gap-6 items-center
         ${
@@ -30,14 +30,14 @@ const UserProfile = ({ user, repos = [], loading = false }) => {
             : "bg-white border-gray-200 text-gray-900"
         }`}
       >
-        {/* Avatar */}
+       
         <img
           src={user.avatar_url}
           alt={user.login}
           className="w-24 h-24 rounded-full border"
         />
 
-        {/* Info */}
+        
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-2xl font-bold">@{user.login}</h2>
 
@@ -64,7 +64,7 @@ const UserProfile = ({ user, repos = [], loading = false }) => {
         </div>
       </div>
 
-      {/* STATS */}
+      
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
         <StatsCard label="Followers" value={user.followers} icon="👥" />
         <StatsCard label="Following" value={user.following} icon="➡️" />
@@ -72,7 +72,7 @@ const UserProfile = ({ user, repos = [], loading = false }) => {
         <StatsCard label="Gists" value={user.public_gists} icon="📝" />
       </div>
 
-      {/* REPOSITORIES */}
+     
       <div className="mt-10">
         <h3
           className={`text-xl font-semibold mb-4 ${

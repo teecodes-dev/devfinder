@@ -16,7 +16,7 @@ const Footer = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
-        {/* BRAND SECTION */}
+        
         <div>
           <h2 className="text-2xl font-bold">
             Dev<span className="text-violet-600">Finder</span>
@@ -32,7 +32,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* QUICK LINKS */}
+        
         <div>
           <h3 className="text-sm font-semibold mb-3">Quick Links</h3>
 
@@ -60,7 +60,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* CONNECT SECTION */}
+        
         <div>
           <h3 className="text-sm font-semibold mb-3">Connect</h3>
 
@@ -69,7 +69,7 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-col gap-3 text-sm">
-            {/* GitHub */}
+            
             <a
               href="https://github.com/teecodes-dev"
               target="_blank"
@@ -80,7 +80,7 @@ const Footer = () => {
               GitHub
             </a>
 
-            {/* LinkedIn */}
+           
             <a
               href="https://ng.linkedin.com/in/adeyanju-ayotomide"
               target="_blank"
@@ -91,7 +91,7 @@ const Footer = () => {
               LinkedIn
             </a>
 
-            {/* Email */}
+            
             <a
               href="mailto:ayotomideadeyanju@gmail.com"
               className="flex items-center gap-2 hover:text-violet-600 transition"
@@ -103,7 +103,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* BOTTOM STRIP */}
+      
       <div
         className={`text-center text-xs py-4 border-t ${
           darkMode ? "border-gray-800" : "border-gray-200"

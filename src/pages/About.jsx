@@ -11,14 +11,14 @@ const About = () => {
       ${darkMode ? "bg-[#0f172a] text-white" : "bg-gray-50 text-gray-900"}`}
     >
       <div className="max-w-5xl mx-auto">
-        {/* HEADER */}
+        
         <h1 className="text-3xl md:text-4xl font-bold">About This Project</h1>
 
         <p className="mt-3 opacity-80 text-sm md:text-base">
           A modern GitHub Explorer built with React and the GitHub API.
         </p>
 
-        {/* MAIN CONTENT */}
+       
         <div
           className={`mt-10 p-6 md:p-8 rounded-xl border shadow-sm transition
           ${
@@ -59,7 +59,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* FOOTER NOTE */}
+        
         <div className="mt-8 text-center text-sm opacity-70">
           Built for learning, practice, and real-world API integration.
         </div>

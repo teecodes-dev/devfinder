@@ -16,25 +16,25 @@ const Hero = ({ onSearch }) => {
       }`}
     >
       <div className="max-w-4xl mx-auto text-center">
-        {/* TITLE */}
+       
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           Discover GitHub Developers & Repositories
         </h1>
 
-        {/* SUBTITLE */}
+       
         <p className="mt-4 text-sm md:text-lg opacity-80">
           Search any GitHub user, explore their repositories, and analyze
           developer activity in real time.
         </p>
 
-        {/* SEARCH */}
+        
         <div className="mt-8 flex justify-center">
           <div className="w-full max-w-xl">
             <SearchBar onSearch={onSearch} />
           </div>
         </div>
 
-        {/* EXTRA INFO */}
+        
         <div className="mt-6 text-xs md:text-sm opacity-60">
           Search for a GitHub user to view profile
         </div>
